@@ -3516,6 +3516,7 @@ details-disclosure > details {
 
 
 /* Custom Code Starts Here */
+/* CODE FOR PDP CAROUSLE STARTS */
 .product__image-slider {
 width: 100%;
 }
@@ -3558,4 +3559,9 @@ width: calc(50% - 1rem / 2) !important;
 .quick-add-modal__content-info .product__image-thumbnail{
   display: none;
 }
-/* Coded by websensepro.com | youtube.com/c/websensepro */
+/* CODE FOR PDP CAROUSLE ENDS */
+
+.price__badge-sale {
+  background-color: #FC8631;
+  color: #fff;
+}
