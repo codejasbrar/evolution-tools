@@ -3540,14 +3540,14 @@ display: none;
 }
 .product__image-thumbnail .carousel-cell.is-selected {
 background: #fff;
-border: 1px solid #686867;
+border: 1px solid #fc8631;
 }
 .product__image-thumbnail .carousel-cell {
 width: 10px;
   height: 10px;
   border: 0;
   border-radius: 50%;
-  background: #686867;
+  background: #fc8631;
 margin-right: 5px;
 }
 .product__image-thumbnail .carousel-cell img {
@@ -3556,7 +3556,7 @@ height: 100%; */
   display: none;
 }
 .flickity-button, .flickity-button:hover {
-  background: #686867 !important;
+  background: #fc8631 !important;
   color: #fff !important;
 }
 .flickity-prev-next-button {
