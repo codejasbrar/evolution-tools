@@ -3540,7 +3540,7 @@ display: none;
 }
 .product__image-thumbnail .carousel-cell.is-selected {
 background: #fff;
-border: #686867;
+border: 1px solid #686867;
 }
 .product__image-thumbnail .carousel-cell {
 width: 15px;
