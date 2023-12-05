@@ -3555,7 +3555,7 @@ margin-right: 5px;
 height: 100%; */
   display: none;
 }
-.flickity-button {
+.flickity-button, .flickity-button:hover {
   background: #686867;
   border: none;
   color: #fff;
