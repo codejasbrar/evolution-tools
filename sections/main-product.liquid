@@ -1,6 +1,7 @@
+
 <section
   id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  class="page-width section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
@@ -8,12 +9,11 @@
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
+  {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
   {%- if product.quantity_price_breaks_configured? -%}
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
-
-  {{ 'runway_bold.css' | asset_url | stylesheet_tag }}
 
   {%- style -%}
     .section-{{ section.id }}-padding {
@@ -35,7 +35,6 @@
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
-  <script src="{{ 'runway_bold.js' | asset_url }}" defer="defer"></script
 
   {% if section.settings.image_zoom == 'hover' %}
     <script id="EnableZoomOnHover-main" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
@@ -64,11 +63,64 @@
   {%- endif -%}
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-  <div class="page-width">
-    <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+
+  {% comment %} CUSTOM PRODUCT IMAGE SLIDER CODE STARTS {% endcomment %}
+  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
-      {% render 'product-media-gallery', variant_images: variant_images %}
-    </div>
+      {% comment %} {% render 'product-media-gallery', variant_images: variant_images %} {% endcomment %}
+      {% if product.images != null %}
+        <div class="carousel product__image-slider" role="document" aria-label="{{ 'products.modal.label' | t }}" tabindex="0">
+          {%- for media in product.media -%}
+            <div class="carousel-cell">
+              {% if media.media_type == "video" %}
+              {{ media | media_tag: image_size: "720x", autoplay: true, loop: loop, controls: true, preload: "none", autoplay: true, height: "100%", width: "100%" }}
+              {% else %}
+              <img src="{{ media | img_url: '1440x' }} 1440w,
+              {{ media | img_url: '1080x' }} 1080w,
+              {{ media | img_url: '720x' }} 767w,
+              {{ media | img_url: '480x' }} 480w"
+              data-flickity-lazyload-srcset="
+              {{ media | img_url: '1440x' }} 1440w,
+              {{ media | img_url: '1080x' }} 1080w,
+              {{ media | img_url: '720x' }} 767w,
+              {{ media | img_url: '480x' }} 480w"
+              sizes="(min-width: 480px) 1440px, 1080px, 767px, 480px"
+              data-flickity-lazyload-src="{{ media | img_url: 'master' }}"
+              alt="{{ media.alt | escape }}"
+              border="0"
+              data-media-id="{{ media.id }}" />
+              {% endif %}
+            </div>
+          {%- endfor -%}
+        </div>
+        {% if product.images.size > 1 %}
+          <div class="carousel product__image-thumbnail">
+            {%- for media in product.media -%}
+            <div class="carousel-cell">
+              <img src="{{ media | img_url: '1440x' }} 1440w,
+              {{ media | img_url: '1080x' }} 1080w,
+              {{ media | img_url: '720x' }} 767w,
+              {{ media | img_url: '480x' }} 480w"
+              data-flickity-lazyload-srcset="
+              {{ media | img_url: '1440x' }} 1440w,
+              {{ media | img_url: '1080x' }} 1080w,
+              {{ media | img_url: '720x' }} 767w,
+              {{ media | img_url: '480x' }} 480w"
+              sizes="(min-width: 480px) 1440px, 1080px, 767px, 480px"
+              data-flickity-lazyload-src="{{ media | img_url: 'master' }}"
+              alt="{{ media.alt | escape }}"
+              border="0"
+              data-media-id="{{ media_id }}" />
+            </div>
+            {%- endfor -%}
+          </div>
+        {% endif %}
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag }}
+      {% endif %}
+   </div>   
+{% comment %} CUSTOM PRODUCT IMAGE SLIDER CODE ENDS {% endcomment %}
+
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <product-info
         id="ProductInfo-{{ section.id }}"
@@ -108,7 +160,7 @@
                 -%}
               </div>
               {%- if product.quantity_price_breaks_configured? -%}
-                <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
+                <div class="volume-pricing-note">
                   <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                 </div>
               {%- endif -%}
@@ -222,7 +274,19 @@
                 <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
                   {{ 'products.product.quantity.label' | t }}
                   <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
-                    {%- render 'loading-spinner' -%}
+                    <span class="loading-overlay hidden">
+                      <span class="loading-overlay__spinner">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          class="spinner"
+                          viewBox="0 0 66 66"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                        </svg>
+                      </span>
+                    </span>
                     <span>({{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}})</span>
                   </span>
                 </label>
@@ -324,7 +388,7 @@
                     </price-per-item>
                   {%- endif -%}
                 </div>
-                <div class="quantity__rules caption no-js-hidden" id="Quantity-Rules-{{ section.id }}">
+                <div class="quantity__rules caption no-js-hidden">
                   {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
                     <span class="divider">
                       {{-
@@ -670,9 +734,33 @@
       ]
     }
   </script>
-  </div>
 </section>
 
+<script>
+var elem = document.querySelector('.carousel.product__image-slider');
+var flkty = new Flickity( elem, {
+contain: true,
+imagesLoaded: true,
+lazyLoad: 1,
+wrapAround: true,
+pageDots: false,
+{% if product.images.size < 2 %}
+prevNextButtons: false,
+{% endif %}
+adaptiveHeight: true
+});
+var elemThumbnail = document.querySelector('.carousel.product__image-thumbnail');
+var flktyB = new Flickity( elemThumbnail, {
+asNavFor: '.carousel.product__image-slider',
+contain: true,
+imagesLoaded: true,
+lazyLoad: 4,
+pageDots: false,
+prevNextButtons: false
+});
+</script>
+
+                          
 {% schema %}
 {
   "name": "t:sections.main-product.name",
@@ -2010,12 +2098,6 @@
       "id": "enable_sticky_info",
       "default": true,
       "label": "t:sections.main-product.settings.enable_sticky_info.label"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "background-1"
     },
     {
       "type": "header",
