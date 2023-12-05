@@ -43,6 +43,33 @@
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
           }
+        },
+        "c76cd95d-2ede-4df2-b069-111f35ebd101": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "content": "",
+            "page": ""
+          }
+        },
+        "e32beb63-728e-4659-93c7-c0afe0543148": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "content": "",
+            "page": ""
+          }
+        },
+        "2ebe6a69-37f5-4286-8161-4e373f6e759f": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "content": "",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -52,7 +79,10 @@
         "variant_picker",
         "description",
         "quantity_selector",
-        "buy_buttons"
+        "buy_buttons",
+        "c76cd95d-2ede-4df2-b069-111f35ebd101",
+        "e32beb63-728e-4659-93c7-c0afe0543148",
+        "2ebe6a69-37f5-4286-8161-4e373f6e759f"
       ],
       "settings": {
         "enable_sticky_info": true,
