@@ -1,0 +1,55 @@
+.runway-bold .PDP-1 .product-form__input input[type="radio"] + label,
+.runway-bold .PDP-1 .color-div,
+.runway-bold .PDP-1 .product-form__submit,
+.runway-bold .PDP-1 .shopify-payment-button__button {
+  border-radius: 25px !important;
+}
+.runway-bold .PDP-1 .product-form__input input[type="radio"] + label {
+  left: 100px;
+  bottom: 26px;
+  margin-bottom: -23px;
+}
+.runway-bold .PDP-1.product--stacked .product__media-item.grid__item {
+  column-span: all;
+}
+.runway-bold .PDP-1 .product-form__input {
+  padding-bottom: 0 !important;
+}
+.runway-bold .PDP-1 .product-form__input legend.form__label_selected {
+  margin-bottom: -23px;
+}
+.runway-bold .PDP-1 .check-Color {
+  margin-top: 1.5rem !important;
+}
+.runway-bold .PDP-1 .OFF_price.price__OFF_price {
+  background-color: #506580;
+  color: #fff;
+  padding: 5px 15px 4px;
+}
+
+/* PDP runway-bold Page Tabs */
+.runway-bold .pdp-tab-section .tab {
+  margin-bottom: 5px;
+}
+.runway-bold .pdp-tab-section a {
+  cursor: pointer;
+  margin-right: 30px;
+  color: #000;
+  text-transform: uppercase;
+}
+.runway-bold .pdp-tab-section a:hover,
+.runway-bold .pdp-tab-section a.active {
+  border-bottom: 1px solid #000;
+}
+.runway-bold .pdp-tab-section .tabcontent {
+  display: none;
+  padding: 6px 0;
+}
+.runway-bold .pdp-tab-section .tabcontent p {
+  letter-spacing: 0.06rem;
+  line-height: calc(1 + 0.8 / var(--font-body-scale));
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight);
+  margin: 0;
+}
