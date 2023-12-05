@@ -3538,6 +3538,10 @@ transition: height 0.2s;
 .flickity-button:disabled {
 display: none;
 }
+.product__image-thumbnail .carousel-cell.is-selected {
+background: #fff;
+border: #686867;
+}
 .product__image-thumbnail .carousel-cell {
 width: 15px;
   height: 15px;
