@@ -53,3 +53,12 @@
   font-weight: var(--font-body-weight);
   margin: 0;
 }
+
+@media screen and (max-width: 750px) {
+  .runway-bold .PDP-1 .product-form__input input[type="radio"] + label {
+    left: 48px;
+    bottom: 22px;
+    margin: 5px 1px;
+    padding: 8px !important;
+  }
+}
