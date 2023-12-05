@@ -3543,12 +3543,12 @@ background: #fff;
 border: 1px solid #686867;
 }
 .product__image-thumbnail .carousel-cell {
-width: 15px;
-  height: 15px;
+width: 10px;
+  height: 10px;
   border: 0;
   border-radius: 50%;
   background: #686867;
-margin-right: 10px;
+margin-right: 5px;
 }
 .product__image-thumbnail .carousel-cell img {
 /* width: 100%;
