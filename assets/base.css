@@ -3562,6 +3562,9 @@ height: 100%; */
 .flickity-prev-next-button {
   border-radius: 5px;
 }
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: pointer;
+}
 @media screen and (max-width: 768px) {
   .flickity-slider {
     transform: unset;
