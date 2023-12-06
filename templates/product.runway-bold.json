@@ -95,7 +95,7 @@
         "3b876337-fea7-4cc5-8087-3b112436a2a3"
       ],
       "settings": {
-        "enable_sticky_info": false,
+        "enable_sticky_info": true,
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
