@@ -61,6 +61,15 @@
             "content": "<ul><li>Multi-Material cutting technology. One saw, one blade, cuts all. Wood, plastics, mild steel and non-ferrous metals. 28T TCT (A)<\/li><li>Accurate cutting with 300mm sliding functionality, adjustable depth of cut and laser precision guidance.<\/li><li>Smooth, square, reliable cutting every time in a variety of materials. Cut mild steel with no heat, no burrs <br\/>& virtually no sparks.<\/li><li>Powerful 2000W (230v option), 1600W (110v option), hi-torque optimised gearbox and blade system increases motor and blade life to cut through a variety of materials with ease.<\/li><li>Perform accurate Crosscuts, Mitre cuts, Bevel cuts and Compound cuts with adjustable precision settings.<\/li><li>Cut to within +\/- 0.5˚ with 45° - 45° bevel tilt and 50˚ - 50˚ mitre angles with quick click mitre stops at 0˚, 15, 22.5, 30, and 45˚ both left & right.<\/li><li>An impressive 300mm x 90mm max. crosscut capacity enables you to cut 4 x 4-inch posts.<\/li><li>Ambidextrous, ergonomic, horizontal trigger with comfortable grip = combats repetitive strain.<\/li><li>Compatible with Evolution's Mitre Saw Stand, giving you full control to cut accurate repeated lengths on wide and long materials with ease.<\/li><li>The Evolution 255mm Diamond blade can also be fitted for cutting ceramic tiles and ornamental stone, (sold separately).<\/li><li>3-year limited warranty.<\/li><\/ul><p><strong>PLUS+ Features<\/strong><\/p><ul><li>Premium Japanese Tungsten-Carbide-Tipped 28T (TCT) 255mm Multi-material blade for long-life, multi-material cutting.<\/li><li>Quick-Release top clamp included for additional safety and faster adjustments.<\/li><li>Tall neck and fences for increase cut capacity and versatility when cutting materials stood upright such <br\/>as skirting and cornices.<\/li><li>Laser-guided precision projects the cutting line on your workpiece for assisted straight-line cutting.<\/li><li>Cleaner and safer working environment with a dust collection bag and dust port adaptor for use with vacuum extraction.<\/li><li>Integrated carry handles - easy to carry and transport around the workplace.<\/li><li>4m rubber power cable gives you the power and reach you need to get the job done.<\/li><\/ul>",
             "page": ""
           }
+        },
+        "88a42123-013a-4f14-9c82-0b04743dbccc": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Specifications",
+            "icon": "check_mark",
+            "content": "<p>Packed with features this double bevel mitre saw cuts 45 ° bevels in both directions. An integrated laser cutting guide and positive bevel stops provide accuracy for every cut. A durable die-cast aluminium base is tough enough to handle any material. With great ergonomics, single-handed cutting action and easy access storage tools and workpiece clamps the R255SMS-DB+ is the ultimate trade and workshop mitre saw, you can pay more but you can't buy better.<\/p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -72,7 +81,8 @@
         "quantity_selector",
         "buy_buttons",
         "c76cd95d-2ede-4df2-b069-111f35ebd101",
-        "e32beb63-728e-4659-93c7-c0afe0543148"
+        "e32beb63-728e-4659-93c7-c0afe0543148",
+        "88a42123-013a-4f14-9c82-0b04743dbccc"
       ],
       "settings": {
         "enable_sticky_info": true,
