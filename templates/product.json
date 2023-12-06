@@ -47,27 +47,18 @@
         "c76cd95d-2ede-4df2-b069-111f35ebd101": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "About this item",
             "icon": "none",
-            "content": "",
+            "content": "<p>This is the product description. All about this item will come here.<\/p>",
             "page": ""
           }
         },
         "e32beb63-728e-4659-93c7-c0afe0543148": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Features",
             "icon": "none",
-            "content": "",
-            "page": ""
-          }
-        },
-        "2ebe6a69-37f5-4286-8161-4e373f6e759f": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "none",
-            "content": "",
+            "content": "<p>This is the product features section. All product features will come here.<\/p>",
             "page": ""
           }
         }
@@ -81,12 +72,10 @@
         "quantity_selector",
         "buy_buttons",
         "c76cd95d-2ede-4df2-b069-111f35ebd101",
-        "e32beb63-728e-4659-93c7-c0afe0543148",
-        "2ebe6a69-37f5-4286-8161-4e373f6e759f"
+        "e32beb63-728e-4659-93c7-c0afe0543148"
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "background-2",
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",

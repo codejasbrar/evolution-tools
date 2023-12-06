@@ -1243,11 +1243,13 @@ button.shopify-payment-button__button--unbranded {
   font: inherit;
   font-size: 1.5rem;
   text-decoration: none;
-  color: rgb(var(--color-button-text));
+  /* color: rgb(var(--color-button-text)); */
+  color: #fff;
   transition: box-shadow var(--duration-short) ease;
   -webkit-appearance: none;
   appearance: none;
-  background-color: rgba(var(--color-button), var(--alpha-button-background));
+  /* background-color: rgba(var(--color-button), var(--alpha-button-background)); */
+  background-color: #FC8631;
 }
 
 .button:before,
@@ -1264,8 +1266,8 @@ button.shopify-payment-button__button--unbranded {
   left: 0;
   z-index: -1;
   border-radius: var(--buttons-radius-outset);
-  box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius)
-    rgba(var(--color-shadow), var(--shadow-opacity));
+  /* box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius)
+    rgba(var(--color-shadow), var(--shadow-opacity)); */
 }
 
 .button:after,
@@ -1280,9 +1282,9 @@ button.shopify-payment-button__button--unbranded {
   left: var(--buttons-border-width);
   z-index: 1;
   border-radius: var(--buttons-radius);
-  box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
+  /* box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
       rgba(var(--color-button-text), var(--border-opacity)),
-    0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background));
+    0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background)); */
   transition: box-shadow var(--duration-short) ease;
 }
 
@@ -1291,9 +1293,9 @@ button.shopify-payment-button__button--unbranded {
 .customer button:hover::after,
 .shopify-payment-button__button--unbranded:hover::after {
   --border-offset: 1.3px;
-  box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
+  /* box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
       rgba(var(--color-button-text), var(--border-opacity)),
-    0 0 0 calc(var(--buttons-border-width) + 1px) rgba(var(--color-button), var(--alpha-button-background));
+    0 0 0 calc(var(--buttons-border-width) + 1px) rgba(var(--color-button), var(--alpha-button-background)); */
 }
 
 .button--secondary:after {
@@ -3514,6 +3516,7 @@ details-disclosure > details {
 
 
 /* Custom Code Starts Here */
+/* CODE FOR PDP CAROUSLE STARTS */
 .product__image-slider {
 width: 100%;
 }
@@ -3535,13 +3538,38 @@ transition: height 0.2s;
 .flickity-button:disabled {
 display: none;
 }
+.product__image-thumbnail .carousel-cell.is-selected {
+background: #fff;
+border: 1px solid #686867;
+}
 .product__image-thumbnail .carousel-cell {
-width: 20%;
-margin-right: 10px;
+width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 50%;
+  background: #686867;
+margin-right: 5px;
 }
 .product__image-thumbnail .carousel-cell img {
-width: 100%;
-height: 100%;
+/* width: 100%;
+height: 100%; */
+  display: none;
+}
+.flickity-button, .flickity-button:hover {
+  background: #686867 !important;
+  color: #fff !important;
+}
+.flickity-prev-next-button {
+  border-radius: 5px;
+}
+.flickity-enabled.is-draggable .flickity-viewport,
+flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .flickity-slider {
+    transform: unset;
+  }
 }
 @media screen and (min-width: 990px) {
 .product:not(.product--no-media):not(.featured-product) .product__media-wrapper {
@@ -3556,4 +3584,14 @@ width: calc(50% - 1rem / 2) !important;
 .quick-add-modal__content-info .product__image-thumbnail{
   display: none;
 }
-/* Coded by websensepro.com | youtube.com/c/websensepro */
+/* CODE FOR PDP CAROUSLE ENDS */
+
+.price__badge-sale {
+  background-color: #FC8631;
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .product__info-wrapper {
+    margin-top: 20px;
+  }
+}
